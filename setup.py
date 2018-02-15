@@ -11,5 +11,5 @@ class Setup(BotPlugin):
         """Set up shared drive path between errbot and local drive"""
         string = str(msg.frm) + ":" + args
         self.share_drive_paths.append(string)
-        for s in share_drive_paths:
+        for s in self.share_drive_paths:
             yield s
