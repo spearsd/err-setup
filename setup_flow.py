@@ -1,9 +1,9 @@
 from errbot import botflow, FlowRoot, BotFlow, FLOW_END
 
-class ConfFlow(BotFlow):
+class setup_flow(BotFlow):
 
     @botflow
-    def conf(self, flow: FlowRoot):
+    def setup_flow(self, flow: FlowRoot):
         """ This flow sets up confirmation with the users."""
         # List of flows, confirm dialogues, and commands that need confirmation
         flows = []
