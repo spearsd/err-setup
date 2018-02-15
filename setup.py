@@ -9,7 +9,7 @@ class Setup(BotPlugin):
     @botcmd
     def setup_path(self, msg, args):
         """Set up shared drive path between errbot and local drive"""
-        string = msg.frm + ":" + args
+        string = str(msg.frm) + ":" + args
         self.share_drive_paths.append(string)
         for s in share_drive_paths:
             yield s
