@@ -24,3 +24,5 @@ class Setup(BotPlugin):
         """Confirmation dialogue"""
         string = msg.frm + ":" + match
         self.share_drive_paths.append(string)
+        for s in share_drive_paths:
+            yield s
