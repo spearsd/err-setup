@@ -11,6 +11,6 @@ class ConfFlow(BotFlow):
         commands = ['setup']
         for i in range(len(commands)):
             flows.append(flow.connect(commands[i], auto_trigger=True))
-            con.append(flows[i].connect('confirm'))
-            con[i].connect('confirm')
-con[i].connect(FLOW_END)#, predicate=lambda ctx: ctx['tries'] == 0)
+            con.append(flows[i].connect('shared_drive'))
+            con[i].connect('shared_drive')
+            con[i].connect(FLOW_END)#, predicate=lambda ctx: ctx['tries'] == 0)
