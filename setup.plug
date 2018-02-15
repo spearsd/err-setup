@@ -1,0 +1,9 @@
+[Core]
+Name = Setup
+Module = setup
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Setup plugin
