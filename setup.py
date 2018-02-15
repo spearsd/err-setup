@@ -22,6 +22,7 @@ class Setup(BotPlugin):
     @botmatch(r'^[a-zA-Z]$', flow_only=True)
     def shared_drive(self, msg, match):
         """Confirmation dialogue"""
+        yield "Here"
         string = msg.frm + ":" + match
         self.share_drive_paths.append(string)
         for s in share_drive_paths:
