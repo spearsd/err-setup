@@ -10,8 +10,12 @@ class Setup(BotPlugin):
     def setup_path(self, msg, args):
         """Set up shared drive path between errbot and local drive"""
         
-        if re.match("^(?:/[^/\n]+)*?$", args):
-            string = str(msg.frm) + ":" + args
+        path = args.strip()
+        
+        if path == "":
+            yield "No path provided. Please provide an absolute path: !setup path /path/to/shareddrive"
+        elif re.match("^(?:/[^/\n]+)*?$", path):
+            string = str(msg.frm) + ":" + path
             new_list = []
             found = False
             for s in self.share_drive_paths:
