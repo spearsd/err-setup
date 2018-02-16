@@ -10,6 +10,16 @@ class Setup(BotPlugin):
     def setup_path(self, msg, args):
         """Set up shared drive path between errbot and local drive"""
         string = str(msg.frm) + ":" + args
-        self.share_drive_paths.append(string)
+        new_list = []
+        found = False
         for s in self.share_drive_paths:
-            yield s
+            if s == string:
+                found = True
+            else:
+                new_list.append(s)
+        new_list.append(string)
+        self.share_drive_paths = new_list
+        if found:
+            yield "Your shared drive path has been updated."
+        else:
+            yield "Your shared drive path was added successfully."
